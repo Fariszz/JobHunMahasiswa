@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "2c70dd40-1c40-4fc6-a810-d4b66deff6ca",
+		"name": "JobHun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Muhammad Faris\",\r\n    \"usia\": 21,\r\n    \"gender\": 1,\r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\",\r\n    \"jurusan\": {        \r\n        \"nama_jurusan\": \"Sistem Informaasi Bisnis\"\r\n    },\r\n    \"hobi\": [\r\n        {            \r\n            \"nama_hobi\": \"Reading\"\r\n        },\r\n        {            \r\n            \"nama_hobi\": \"Basket\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/mahasiswa",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"mahasiswa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Muhammad Faris\",\r\n    \"usia\": 21,\r\n    \"gender\": 1,\r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\",\r\n    \"jurusan\": {        \r\n        \"nama_jurusan\": \"Sistem Informaasi Bisnis\"\r\n    },\r\n    \"hobi\": [\r\n        {            \r\n            \"nama_hobi\": \"Reading\"\r\n        },\r\n        {            \r\n            \"nama_hobi\": \"Basket\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:00:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "316"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Success to create mahasiswa\",\n        \"code\": 201,\n        \"status\": \"success\"\n    },\n    \"data\": {\n        \"id\": 0,\n        \"nama\": \"Muhammad Faris\",\n        \"usia\": 21,\n        \"gender\": 1,\n        \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\",\n        \"jurusan\": {\n            \"id\": 0,\n            \"nama_jurusan\": \"Sistem Informaasi Bisnis\"\n        },\n        \"hobi\": [\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Reading\"\n            },\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Basket\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Muhammad Faris\",\r\n    \"usia\": 21,    \r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\",\r\n    \"jurusan\": {        \r\n        \"nama_jurusan\": \"Sistem Informaasi Bisnis\"\r\n    },\r\n    \"hobi\": [\r\n        {            \r\n            \"nama_hobi\": \"Reading\"\r\n        },\r\n        {            \r\n            \"nama_hobi\": \"Basket\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:00:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Failed to create mahasiswa\",\n        \"code\": 422,\n        \"status\": \"error\"\n    },\n    \"data\": {\n        \"errors\": [\n            \"Key: 'CreateMahasiswaInput.Gender' Error:Field validation for 'Gender' failed on the 'required' tag\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/mahasiswa",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"mahasiswa"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 00:59:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "355"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"List of mahasiswa\",\n        \"code\": 200,\n        \"status\": \"success\"\n    },\n    \"data\": [\n        {\n            \"nama\": \"Faris update\",\n            \"usia\": 21,\n            \"gender\": 1,\n            \"tanggal_registrasi\": \"2023-04-20T17:00:00+07:00\"\n        },\n        {\n            \"nama\": \"Faris yeay bisa\",\n            \"usia\": 21,\n            \"gender\": 1,\n            \"tanggal_registrasi\": \"2023-04-20T17:00:00+07:00\"\n        },\n        {\n            \"nama\": \"new\",\n            \"usia\": 21,\n            \"gender\": 1,\n            \"tanggal_registrasi\": \"2023-04-20T17:00:00+07:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/mahasiswa/17",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"mahasiswa",
+						"17"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"17"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:12:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Detail of mahasiswa\",\n        \"code\": 200,\n        \"status\": \"success\"\n    },\n    \"data\": {\n        \"id\": 17,\n        \"nama\": \"Muhammad Faris\",\n        \"usia\": 21,\n        \"gender\": 1,\n        \"tanggal_registrasi\": \"2023-04-20T17:00:00+07:00\",\n        \"jurusan\": {\n            \"id\": 0,\n            \"nama_jurusan\": \"\"\n        },\n        \"hobi\": [\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Reading\"\n            },\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Basket\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/19",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"19"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:12:26 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Failed to get detail mahasiswa\",\n        \"code\": 404,\n        \"status\": \"error\"\n    },\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/mahasiswa/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"mahasiswa",
+						"12"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"12"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:12:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Failed to get detail mahasiswa\",\n        \"code\": 404,\n        \"status\": \"error\"\n    },\n    \"data\": null\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"18"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:13:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Success to delete mahasiswa\",\n        \"code\": 200,\n        \"status\": \"success\"\n    },\n    \"data\": {\n        \"nama\": \"Muhammad Faris\",\n        \"usia\": 21,\n        \"gender\": 1,\n        \"tanggal_registrasi\": \"2023-04-20T17:00:00+07:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama\": \"Muhammad Faris Update\",\r\n    \"usia\": 21,\r\n    \"gender\": 1,\r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/mahasiswa/17",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"mahasiswa",
+						"17"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Muhammad Faris Update\",\r\n    \"usia\": 21,\r\n    \"gender\": 1,\r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"17"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:25:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "300"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Success to update mahasiswa\",\n        \"code\": 200,\n        \"status\": \"success\"\n    },\n    \"data\": {\n        \"id\": 17,\n        \"nama\": \"Muhammad Faris Update\",\n        \"usia\": 21,\n        \"gender\": 1,\n        \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\",\n        \"jurusan\": {\n            \"id\": 0,\n            \"nama_jurusan\": \"\"\n        },\n        \"hobi\": [\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Reading\"\n            },\n            {\n                \"id\": 0,\n                \"nama_hobi\": \"Basket\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Muhammad Faris Update\",\r\n    \"usia\": 21,    \r\n    \"tanggal_registrasi\": \"2023-04-20T10:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mahasiswa/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mahasiswa",
+								"17"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Apr 2023 01:26:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"message\": \"Failed to update mahasiswa\",\n        \"code\": 422,\n        \"status\": \"error\"\n    },\n    \"data\": {\n        \"errors\": [\n            \"Key: 'CreateMahasiswaInput.Gender' Error:Field validation for 'Gender' failed on the 'required' tag\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
