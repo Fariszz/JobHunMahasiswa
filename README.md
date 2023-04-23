@@ -16,7 +16,7 @@ Repository yang digunakan untuk techincal test  Jobhun Internship 2023
 
 1. Clone this project
     ```
-    git@gitlab.dot.co.id:dpr/dpr-sniper-be.git
+    git clone https://github.com/Fariszz/JobHunMahasiswa.git
     ```
 
 2. Copy `.env.example` to `.env`
